@@ -50,8 +50,8 @@ const PostProvide = ({ children }) => {
   );
 };
 
-const usePost=()=>{
-    
-}
+const usePost = () => {
+  console.log(test);
+};
 
 export { PostProvide, PostContext };
