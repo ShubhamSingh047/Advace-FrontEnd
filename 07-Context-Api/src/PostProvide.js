@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 import { faker } from "@faker-js/faker";
@@ -51,7 +51,10 @@ const PostProvide = ({ children }) => {
 };
 
 const usePost = () => {
-  console.log(test);
+  const context = useContext(PostContext);
+  if (context === undefined)
+    throw new Error("context is being used outside provider!");
+  return context;
 };
 
-export { PostProvide, PostContext };
+export { PostProvide, usePost };
